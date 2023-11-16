@@ -1,0 +1,28 @@
+{
+  "name": "oa-gulp",
+  "version": "1.0.0",
+  "description": "Test to switch from Ruby to Gulp",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choscion/OA-gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/choscion/OA-gulp/issues"
+  },
+  "homepage": "https://github.com/choscion/OA-gulp#readme",
+  "devDependencies": {
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "slim": "^0.11.1",
+    "slim-lang-loader": "^0.0.9",
+    "slim-loader": "^0.0.9",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
