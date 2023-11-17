@@ -1,0 +1,97 @@
+<head><script defer="defer" src="bundle.js"></script></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/slim-lang-loader/index.js):
+  Error: Got an unexpected exception from the slim-lang-script compiler. The original exception was: Error: Command failed: slimrb 
+  LocalJumpError: no block given (yield)
+    Use --trace for backtrace.
+  
+  
+      at Object.module.exports (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/slim-lang-loader/index.js:44:9)
+  ModuleBuildError: Module build failed (from ./node_modules/slim-lang-loader/index.js):
+  Error: Got an unexpected exception from the slim-lang-script compiler. The original exception was: Error: Command failed: slimrb 
+  LocalJumpError: no block given (yield)
+    Use --trace for backtrace.
+  
+  
+      at Object.module.exports (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/slim-lang-loader/index.js:44:9)
+      at processResult (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/webpack/lib/NormalModule.js:764:19)
+      at /Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/webpack/lib/NormalModule.js:866:5
+      at /Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/loader-runner/lib/LoaderRunner.js:400:11
+      at /Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/loader-runner/lib/LoaderRunner.js:252:18
+      at runSyncOrAsync (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/loader-runner/lib/LoaderRunner.js:156:3)
+      at iterateNormalLoaders (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/loader-runner/lib/LoaderRunner.js:251:2)
+      at /Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/loader-runner/lib/LoaderRunner.js:224:4
+      at /Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/webpack/lib/NormalModule.js:840:15
+      at Array.eval (eval at create (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:12:1)
+      at runCallbacks (/Users/user/Desktop/choding/OA CRM/OA-gulp/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:43:15)
+  
+  - index.js:44 Object.module.exports
+    [OA-gulp]/[slim-lang-loader]/index.js:44:9
+  
+  - ModuleBuildError: Module build failed (from ./node_modules/slim-lang-loader/index.js):
+  
+  - Error: Got an unexpected exception from the slim-lang-script compiler. The original exception was: Error: Command failed: slimrb
+  
+  - LocalJumpError: no block given (yield)
+  
+  - Use --trace for backtrace.
+  
+  - index.js:44 Object.module.exports
+    [OA-gulp]/[slim-lang-loader]/index.js:44:9
+  
+  - NormalModule.js:764 processResult
+    [OA-gulp]/[webpack]/lib/NormalModule.js:764:19
+  
+  - NormalModule.js:866 
+    [OA-gulp]/[webpack]/lib/NormalModule.js:866:5
+  
+  - LoaderRunner.js:400 
+    [OA-gulp]/[loader-runner]/lib/LoaderRunner.js:400:11
+  
+  - LoaderRunner.js:252 
+    [OA-gulp]/[loader-runner]/lib/LoaderRunner.js:252:18
+  
+  - LoaderRunner.js:156 runSyncOrAsync
+    [OA-gulp]/[loader-runner]/lib/LoaderRunner.js:156:3
+  
+  - LoaderRunner.js:251 iterateNormalLoaders
+    [OA-gulp]/[loader-runner]/lib/LoaderRunner.js:251:2
+  
+  - LoaderRunner.js:224 
+    [OA-gulp]/[loader-runner]/lib/LoaderRunner.js:224:4
+  
+  - NormalModule.js:840 
+    [OA-gulp]/[webpack]/lib/NormalModule.js:840:15
+  
+  
+  - CachedInputFileSystem.js:43 runCallbacks
+    [OA-gulp]/[enhanced-resolve]/lib/CachedInputFileSystem.js:43:15
+  
+  - child-compiler.js:169 
+    [OA-gulp]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:551 finalCallback
+    [OA-gulp]/[webpack]/lib/Compiler.js:551:5
+  
+  - Compiler.js:577 
+    [OA-gulp]/[webpack]/lib/Compiler.js:577:11
+  
+  - Compiler.js:1200 
+    [OA-gulp]/[webpack]/lib/Compiler.js:1200:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [OA-gulp]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1196 
+    [OA-gulp]/[webpack]/lib/Compiler.js:1196:33
+  
+  - Compilation.js:2795 finalCallback
+    [OA-gulp]/[webpack]/lib/Compilation.js:2795:11
+  
+  - Compilation.js:3100 
+    [OA-gulp]/[webpack]/lib/Compilation.js:3100:11
+  
+  
+</anonymous></pre>

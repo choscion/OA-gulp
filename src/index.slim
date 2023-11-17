@@ -1,0 +1,52 @@
+- title = 'CMS/CRM'
+- layout = 'pc'
+- id = 'index'
+- pc_pages = ['headers', 'modals', 'chat']
+
+css:
+  body{
+    overflow: auto !important;
+  }
+  a.deprecated {
+    text-decoration: line-through;
+    filter: grayscale(1);
+  }
+  span.suggestions {
+    display: inline-block;
+    transform: scale(.8);
+    transform-origin: 0 0;
+  }
+  span.suggestions a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #00B900;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: .25em;
+  }
+  a:target {
+    background: #ff0;
+  }
+.container.py-3
+  .d-flex.justify-content-between.align-items-center.mb-3
+    h1.display-4
+      = title
+    a href="https://wiki.linecorp.com/x/TSP5O" Wiki
+  h2.h3 Demo
+  hr
+  .card-deck.mb-5
+    .card
+      .card-header.d-flex.justify-content-between.align-items-center
+        span
+          i.fas.fa-laptop.la-fw.mr-1
+          |PC
+        a href="https://uit.line-alpha.me/biz-cms-markup/html/pc/sample/"
+          |UIT
+      .card-body
+        ul.mb-0
+          - pc_pages.each do |page, className, *suggestions|
+            li
+              a href="pc/#{page}.html" class=(className) name="anchor_pc_#{page}"
+                = page
+              span.suggestions

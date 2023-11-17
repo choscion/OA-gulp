@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="x-ua-compatible" content="ie=edge"
+    / - site = 'LOA'
+    / - if !current_page.data.norwd
+    /   meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    title title
+
+    / = stylesheet_link_tag data.site.font_awesome.pro.url.gsub(/\[ver\]/, data.site.font_awesome.ver)
+    / = stylesheet_link_tag data.site.laicon.url.gsub(/\[ver\]/, data.site.laicon.ver)
+    link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet"
+    link href="https://static.line-scdn.net/koromo/edge/2.1/koromo.css" rel="stylesheet"
+    link href="pc/chat.css" rel="stylesheet"
+    link href="pc/cms.css" rel="stylesheet"
+    script src="https://static.line-scdn.net/koromo/edge/2.1/koromo.js" type="text/javascript"
+  body
+    == yield
