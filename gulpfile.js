@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 const stylus = require('gulp-stylus');
 
 const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
+// const reload = browserSync.reload;
 
 // path object
 const paths = {
@@ -22,6 +22,7 @@ const paths = {
   styl_exclude: "src/css/_partial/",
   styl_pc_exclude: "src/css/pc/_partial/",
   styl_app_exclude: "src/css/app/_partial/",
+  img_src: "src/img",
 };
 
 // index build
@@ -57,6 +58,16 @@ async function taskStylus(cb) {
     .pipe(dest(paths.styl_dist))
 }
 
+// copy
+function copySrcToDist(cb) {
+  return src(
+    [
+      path.join(paths.img_src, "**/*"),
+    ],
+    { base: paths.src }
+  ).pipe(dest(paths.dist));
+}
+
 // clean dist
 async function cleanDist(cb) {
   await del(path.join(paths.dist), { force: true });
@@ -77,26 +88,16 @@ function startDevServer(cb) {
 
 // watch
 function watchFiles(cb) {
-  watch(path.join(paths.src, "**/*.html")).on("change", compileIndex);
-  watch(path.join(paths.src, "**/*.ejs")).on("change", compileContent);
+  watch(path.join(paths.src, "**/*.html"), compileIndex);
+  watch(path.join(paths.src, "**/*.ejs"), compileContent);
   watch(path.join(paths.styl_src, '**/*.styl'), taskStylus);
   cb();
 }
 
 exports.default = series(
+  cleanDist,
   parallel(compileIndex, compileContent, taskStylus),
+  copySrcToDist,
   watchFiles,
   startDevServer
-);
-
-exports.build = series(
-  cleanDist,
-  parallel(compileIndex, compileContent, taskStylus)
-);
-
-exports.deploy = series(
-  cleanDist,
-  compileIndex,
-  compileContent,
-  taskStylus
 );
