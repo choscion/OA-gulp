@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 const stylus = require('gulp-stylus');
 
 const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
+// const reload = browserSync.reload;
 
 // path object
 const paths = {
@@ -77,8 +77,8 @@ function startDevServer(cb) {
 
 // watch
 function watchFiles(cb) {
-  watch(path.join(paths.src, "**/*.html")).on("change", compileIndex);
-  watch(path.join(paths.src, "**/*.ejs")).on("change", compileContent);
+  watch(path.join(paths.src, "**/*.html"), compileIndex);
+  watch(path.join(paths.src, "**/*.ejs"), compileContent);
   watch(path.join(paths.styl_src, '**/*.styl'), taskStylus);
   cb();
 }
