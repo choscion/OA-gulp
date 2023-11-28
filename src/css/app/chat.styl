@@ -1,0 +1,344 @@
+
+
+border = #dee2e6
+gray = #cfd4da
+dark = #353a40
+primary = #00B900
+danger = #F14E3D
+
+
+/* ----------------------------- */
+/* Modals */
+/* ----------------------------- */
+
+// Modals : Ignore modal-body padding
+.modal-body-fill
+  margin -1rem
+
+// Modals : Media > meta
+#show-meta
+  top: auto
+  bottom: 0
+  .modal-content
+    height: auto
+
+// Modal : Preview (status bar)
+.app-modal-preview
+  .modal-body,
+  .modal-content
+    padding 0!important
+
+// Modal : App modal (sheet type)
+.modal.app-modal
+  overflow-y scroll
+  transition background-color .3s ease
+  &.full-modal-active
+    overflow-y hidden
+    -webkit-overflow-scrolling touch
+    transform translateY(50%)
+    transition transform 0.3s ease-out, opacity 0.2s, background-color 0.3s ease
+    &.show
+      transform translateY(0)
+    .modal-body
+      height 0px
+.modal-dialog
+  &.modal-full
+    height 100vh
+    padding-top 1rem
+    .modal-content
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      box-shadow: 0 -5px 15px rgba(53, 58, 64, 0.1);
+      padding-bottom: constant(safe-area-inset-bottom)
+      padding-bottom: env(safe-area-inset-bottom)
+      .modal-body
+        height 100%
+  .list-group
+    .badge-pill
+      padding-left 0.51em
+      padding-right 0.51em
+
+// Modal: bg
+.bg-preview-chat
+  background: url(../../img/bg-chatroom-cloud.jpg) no-repeat 50% 0 / cover
+
+
+/* ----------------------------- */
+/* Chatroom */
+/* ----------------------------- */
+
+// Chatroom : Header menu
+.header-menu
+  position absolute
+  top 0
+  left 0
+  width 100%
+  z-index 4
+.overlay // overlay for header menu
+  position absolute
+  z-index 4
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+// Chatroom : Search
+.search-box
+  background-color #fff
+  z-index 9
+.search-result
+  position absolute
+  width 100%
+  height 100%
+  background #ffffff
+  z-index 10
+
+// Chatroom : Inputform
+#form
+  z-index 2
+  font-size 16px
+
+  .form-area
+    padding 0 0.5em
+    a.form-button
+      padding 0.5em
+
+// Chatroom : New message notice above inputform
+.notice
+  display flex
+  align-items center
+  position absolute
+  top calc(-2.25rem - 1px)
+  left 0
+  width 100%
+  height 2.25rem
+  color #fff
+  padding 0 .75rem
+
+// Chatroom : Reply message above inputform
+.chat-reply
+  top calc(-3.3125rem - 1px)
+
+// Chatroom : N badge for inputform menu
+.badge-pin-new
+  position relative
+  &::after
+    content ''
+    width 0.35rem
+    height 0.35rem
+    position absolute
+    top 0.33rem
+    right 0.35rem
+    background-color primary
+    border-radius 50%
+
+// Chatroom : Inputform textarea
+#editor
+  position relative
+  width 100%
+  height 100%
+  textarea
+    font-family inherit
+    resize none
+    white-space pre-wrap // fallback
+    white-space break-spaces
+    &::placeholder
+      color #adb5bd
+      font-family inherit
+    &[readonly]
+      white-space nowrap
+      overflow-x scroll
+      & ~ .editor-overlay
+        white-space nowrap
+  .editor-textarea
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    width 100%
+    height 100%
+    background-color #fff
+    scrollbar-width none
+    &::-webkit-scrollbar
+      display none
+  .editor-textarea-fallback
+    min-height 2.5rem
+    max-height 2.5rem
+  .editor-overlay
+    position relative
+    min-height 2.5rem
+    max-height 2.5rem
+    scrollbar-width none
+    border 1px solid transparent
+    pointer-events none
+    font-size 0.9375rem
+    white-space pre-wrap // fallback
+    white-space break-spaces
+    color transparent
+    & + .form-button-wrap
+      position absolute
+      right 5px
+      bottom 0
+    &::-webkit-scrollbar
+      display none
+    .emoji
+      color transparent
+      overflow hidden
+      background-size contain
+      background-position 50%
+      background-repeat no-repeat
+  &.focus
+    .editor-overlay,
+    .editor-textarea-fallback
+      max-height MIN(37vh, 11.9rem)
+.form-group-clear
+  .form-control
+    padding-right 2rem
+  .form-control-clear
+    position absolute
+    bottom 50%
+    right 0
+    font-size 1.2rem
+    transform: translateY(50%)
+
+
+// Chatroom : N badge for plus menu
+.badge-new
+  position relative
+  &::after
+    content 'N'
+    width 18px
+    height 18px
+    position absolute
+    top 0
+    right 0
+    background-color danger
+    border-radius 50%
+    font-size 75%
+    font-weight 600
+    color #fff
+    text-align center
+
+// Chatroom : search keyword up/down
+.search-control
+  position absolute
+  top -85px
+  right .5rem
+  z-index 1
+
+/* ----------------------------- */
+/* Settings */
+/* ----------------------------- */
+
+// Setting : Call - disabled alert
+.alert-overlay
+  &::before
+    content ""
+    display block
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    z-index 1
+    background-color currentColor
+    opacity 0.6
+  .alert
+    position relative
+    z-index 2
+
+// rich textarea
+rich-textarea.form-control
+  --rich-textarea-padding 0.875rem 0.75rem
+
+/* ----------------------------- */
+/* Chat messages */
+/* ----------------------------- */
+
+.chat-item-text
+  font-size 1rem !important;
+
+// Chat menu tooltip
+.tooltip-inner
+  max-width 100%
+
+.chat-item.multi
+  .tooltip
+    left 50%
+    transform translate(-50%, -100%)
+
+
+/* ----------------------------- */
+/* Device fix */
+/* ----------------------------- */
+
+// Disable long tap if used as button
+a
+  &[href="#"],
+  &.list-group-item
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+
+// iOS 15 Fix - LINEBOT-29740
+img
+  -webkit-user-drag none
+  user-drag none
+  pointer-events none
+
+// iOS 15 Fix - LINEBOT-29740
+.modal-dialog.avoid-long-press-bug .modal-content::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  animation: avoid-long-press-bug 0s linear 0.1s both;
+}
+.longpressed .modal-dialog.avoid-long-press-bug .modal-content::after {
+  animation: none;
+}
+@keyframes avoid-long-press-bug {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+// iOS Fix - sticky hover
+.tag.tag-link.bg-secondary-50
+  &:hover
+    color: #707991 !important
+    background-color: rgba(207,212,218,0.5)!important
+
+// Fix iOS sticky hover
+.list-group-item-action:hover
+  background-color transparent
+
+    
+// App
+@import '_partial/_cmodal.styl'
+@import '_partial/_kv-tag.styl'
+@import '_partial/_emoji-list.styl'
+@import '_partial/_timeline.styl'
+
+
+// Common
+@import '../_partial/_common-chat.styl'
+@import '../_partial/_common-chatlist.styl'
+@import '../_partial/_common-laicon.styl'
+@import '../_partial/_common-emoji.styl'
+@import '../_partial/_common-sticker.styl'
+@import '../_partial/_common-preview.styl'
+@import '../_partial/_common-reply.styl'
+@import '../_partial/_koromo-fix.styl'
+@import '../_partial/_koromo-vue-fix.styl'
+
+
+
+
+

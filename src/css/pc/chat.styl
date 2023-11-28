@@ -1,0 +1,757 @@
+light = #f8f9fa
+active = #666f86
+border = #dee2e6
+gray = #cfd4da
+primary = #00B900
+
+
+body
+  overflow hidden
+  a
+  img
+    -webkit-user-drag none
+    user-drag none
+  &.cursor-col-resize
+    a, button
+      pointer-events: none;
+#container
+  display: flex
+  flex-direction: column
+  flex: 1 1 auto
+  min-width 1341px
+  height calc(100% - 60px)
+#wrapper
+  display: flex
+  align-items: stretch
+  flex: 1 1 auto
+  overflow: hidden;
+#menu
+  display flex
+  flex-direction column
+  justify-content space-between
+  flex 0 0 270px
+  position relative
+  height 100%
+  padding 0 5px
+  background light
+  border-right 1px solid border
+  z-index 900
+  .nav-btn,.nav-link
+    color #495057
+    &:hover,&.active
+      color primary
+  .nav
+    flex-wrap nowrap
+    overflow-y auto
+  .nav-item
+    position relative
+    margin-top 5px
+  .nav-btn
+    display flex
+    align-items center
+    position relative
+    height 50px
+    font-size 20px
+    .lar
+      position relative
+      width 50px
+      text-align center
+    .badge
+      padding 3px 5px
+      font-size 10px
+    .nav-btn-text
+      display inline-flex
+      align-items center
+      margin 0 5px 0 -4px
+      font-size 15px
+      .la-caret-right
+      .la-caret-down
+      .la-arrow-out-square
+        display block
+        position absolute
+        top 50%
+        right 10px
+        width auto
+        transform translateY(-50%)
+  div.nav-btn
+    &:hover
+      color #495057
+    &.active:hover
+      color primary
+  [aria-expanded=true]+.nav-sub
+    display block
+  .nav-sub
+    display none
+    position relative
+    top -5px
+    margin-left 41px
+    font-size 15px
+    &-enter
+      transform translateX(-14px)
+      opacity 0
+    &-enter-to
+      transform translateX(0)
+      opacity 1
+      transition transform 0.3s, opacity 0.3s
+    .nav-sub-title
+      display none
+    .badge
+      padding 3px 5px
+      font-size 10px
+  .nav-btn-expand
+    position relative
+    width 100%
+    height 50px
+    color #495057
+    text-align left
+    &:hover .text-inner
+      color primary
+    .las
+      width 50px
+      color #adb5bd
+      text-align center
+    .nav-btn-text
+      position relative
+      margin-left -6px
+      font-size 13px
+  &.is-compact
+    flex-basis 60px
+    .nav
+      overflow visible
+    .nav-item:hover
+      .nav-sub
+        display flex
+       .nav-btn-new::after
+        display none
+    .nav-btn
+      .badge
+        position absolute
+        left 25px
+        bottom 15px
+      .nav-btn-text
+        display none
+    .nav-btn-new::after
+        content 'N'
+        position absolute
+        top 9px
+        left 28px
+        z-index 1
+        color #ffffff
+        background #eb4e3d
+        width 18px
+        height 18px
+        text-align center
+        line-height 18px
+        border-radius 50%
+        font-size 10px
+    .nav-sub
+      display none
+      position absolute
+      top 50%
+      left 100%
+      margin -24px 0 0 0
+      padding 0.25rem 0
+      border 1px solid rgba(0,0,0,0.125)
+      border-radius 2px
+      background-color #fff
+      background-clip border-box
+      font-size 90%
+      white-space nowrap
+      box-sizing border-box
+      z-index 1
+      &::before
+        position absolute
+        top 19px
+        left -5px
+        width 0.5rem
+        height 0.5rem
+        border 1px solid rgba(0,0,0,0.125)
+        background-color #fff
+        border-width 1px 0 0 1px
+        transform rotate(-45deg)
+        content ''
+      .nav-sub-item
+        padding-left 0.5rem
+        &:first-child
+          padding-left 0
+      .nav-sub-title
+        display block
+        padding 8px 16px
+        color #495057
+        font-weight bold
+        &.active
+          color primary
+          font-weight bold
+      a.nav-sub-title
+        font-weight normal
+        &:hover
+          color primary
+      div.nav-sub-title
+        cursor default
+      .nav-link.active
+        font-weight bold
+    .nav-btn-expand
+        &:hover .nav-btn-text
+          display block
+        .nav-btn-text
+          display none
+          position absolute
+          top 50%
+          left 100%
+          margin-left 0
+          transform translateY(-50%)
+          z-index 1
+          &::before
+            position absolute
+            top 50%
+            left -4px
+            width 0.5rem
+            height 0.5rem
+            background-color #353a40
+            border-width 1px 0 0 1px
+            transform translateY(-50%) rotate(-45deg)
+            content ''
+          .text-inner
+            display block
+            padding 0.25rem 0.5rem
+            color #fff
+            border-radius 2px
+            background-color #353a40
+            white-space nowrap
+
+#content
+  display: flex
+  position: relative
+  flex-direction: column
+  flex: 1 1 auto
+  overflow-y auto
+#content-wrapper
+  display flex
+  flex 1 1 auto
+  min-height 594px
+  overflow-y auto
+#content-primary
+  position relative
+  display flex
+  flex-direction column
+  width 250px
+  min-width 100px
+  max-width 360px
+  flex 0 0 auto
+#content-secondary
+  position relative
+  border 1px solid border
+  border-width 0 1px
+  display flex
+  flex-direction column
+  flex 1 1 auto
+  min-width 240px
+#content-thirdly
+  position relative
+  width 360px
+  min-width 48px
+  flex 0 0 auto
+  z-index: 6
+  &.content-collapse
+    width 0
+    min-width 0
+  .position-sticky // tabs
+    top 0
+  .position-relative.h-100
+    z-index 2
+  .content-header
+    z-index 3
+    .dropdown
+      width 100%
+      z-index 3
+    .dropdown-item
+      white-space normal
+
+
+/* ----------------------------- */
+/* Chatroom */
+/* ----------------------------- */
+
+// Chatroom : Search
+#search-result
+  height 308px
+  width 400px
+  z-index 4
+
+// Chatroom : Inputform
+#editable-unit
+  display flex
+  flex-direction column
+  z-index 3
+  #editable-notice
+    display flex
+    align-items center
+    position absolute
+    top calc(-2.25rem - 1px)
+    left 0
+    z-index 2
+    width 100%
+    height 2.25rem
+    background rgba(black, .5)
+    color #fff
+    padding 0 .75rem
+  #editable-webhook
+  #editable-outside
+  #editable-smart
+    display flex
+    align-items center
+    justify-content center
+    position absolute
+    top 0
+    left 0
+    z-index 2
+    width 100%
+    height 100%
+    background rgba(0,0,0,.5)
+    color #fff
+    padding 0 .75rem
+.editor-area
+  flex 1 1 0%
+  min-height 80px
+  max-height: MIN(calc(75vh - 233px), 360px)
+  overflow hidden
+  overflow-y auto
+  position relative
+#editor
+  position relative
+  overflow hidden
+  height 100%
+  .editor-textarea
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 1
+    width 100%
+    height 100%
+    resize none
+    font-family inherit
+    background-color transparent
+    white-space pre-wrap // fallback
+    white-space break-spaces
+    &::placeholder
+      color #adb5bd
+      font-family inherit
+  .editor-overlay
+    position relative
+    height 100%
+    pointer-events none
+    white-space pre-wrap // fallback
+    white-space break-spaces
+    color transparent
+    .emoji
+      color transparent
+      overflow hidden
+      background-size contain
+      background-position 50%
+      background-repeat no-repeat
+.form-group-clear
+  textarea.form-control
+    overflow hidden
+    &[rows="4"]
+      overflow: auto
+  .invalid-feedback
+    bottom 0;
+
+// Chatroom : N badge for inputform menu
+.badge-pin-new
+  position relative
+  &::after
+    content ''
+    width 0.3rem
+    height 0.3rem
+    position absolute
+    top -0.1rem
+    right -0.1rem
+    background-color primary
+    border-radius 50%
+
+// Sticker
+.sticon-console
+  height 233px
+.sticker-nav-list
+  // max-height 120px
+.sticker-nav-inner
+  margin-right 30px
+  padding-right 15px
+  max-height 120px
+  overflow auto
+  // overflow overlay
+
+  .custom-collapse
+    height 0
+    display block!important;
+    min-height 33px
+    overflow hidden
+
+    &.show
+      height auto
+      max-height 120px
+      overflow unset
+
+      & + .sticker-nav-toggle
+        transform rotate(180deg)
+
+.sticker-nav-toggle
+  top 2px
+  right 2px
+
+
+/* ----------------------------- */
+/* Profile */
+/* ----------------------------- */
+
+// profile sticky elements
+.profile-tabs
+  position -webkit-sticky
+  position sticky
+  top 0
+  z-index 1
+  background-color #fff
+.profile-tabpanel-option
+  position -webkit-sticky
+  position sticky
+  top 56px
+  z-index 1
+  text-align right
+  background-color #fff
+  margin-top -1rem
+  padding 1rem 0
+.profile-tabpanel-content
+  clear both
+  min-height calc(100vh - 147px);
+  & > .text-muted:only-child // no notes
+    padding-top 100px!important
+
+.sub-header
+  background-color #fff
+  z-index 4
+
+/* ----------------------------- */
+/* Modal */
+/* ----------------------------- */
+
+// Preview messages
+.modal
+  .chat-content
+    flex 1 1 auto
+    min-width 0
+    .chat-item-template-sub
+      width: auto!important;
+    .kv-flex-bubble,
+    .chat-item-template
+      pointer-events none
+    .carousel-inner
+      left -0.25rem
+      box-sizing content-box
+      padding-left 1rem
+    .kv-flex-carousel
+      padding 0 1rem
+      margin-left -1rem
+.chat-item-image
+  position relative
+  overflow hidden
+  background-size cover
+  background-position 50%
+  &::before
+    content ''
+    display block
+    padding-top 64.935%
+  // TODO: Remove after dev
+  img
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    width 100%
+    height 100%
+    object-fit cover
+.chat-item-template-text
+  word-wrap break-word
+  word-break break-all;
+  overflow-wrap anywhere;
+
+.bg-preview-chat
+  background: url(../../img/bg-chatroom-cloud.jpg) no-repeat 50% 0 / cover
+
+// confirmation modal
+@import '../_partial/_common-filelist.styl'
+include-common-filelist(pc)
+
+
+/* ----------------------------- */
+/* Chatlist */
+/* ----------------------------- */
+
+// Chatlist : Hover menu
+.chatlist
+  .list-group-item:hover
+    .chatlist-menu
+      display flex!important
+    .datetime
+      visibility hidden
+.chatlist-menu
+  display none!important
+  width 50px
+  top 0
+  right 0
+  z-index 1
+  background-color inherit
+  &.show
+    display flex!important
+    & + .d-flex .datetime
+      visibility hidden
+  .dropdown-toggle::after
+    display none
+  .content-collapse &
+    width 20px
+
+// Chatlist : Adjust button
+.btn-adjust-panel
+  position absolute
+  top 50%
+  right -1.075rem
+  z-index 3
+  padding 0.5rem 0.2rem 0.5rem
+  background-color transparent
+  font-size 0.9375rem
+  transform translateY(-50%)
+  cursor col-resize!important
+  color #adb5bd
+  &:focus
+    box-shadow none
+.btn-collapse-panel
+  position absolute
+  top 6.75rem
+  left 0
+  z-index 1
+  transition left 0.2s
+  &.active
+    left -1.76rem
+  .content-collapse &
+    left -1.76rem
+    .la-arrow-to-right::before
+      content "\e00a";
+.content-collapse
+  .hide-on-collapse
+    display none!important
+  .show-on-collapse
+    display block!important
+  .chatlist-search
+    position absolute
+    width 1px
+    height 1px
+    clip rect(0, 0, 0, 0)
+    transform translateX(200%)
+    opacity 0
+  .recent-search-delete
+    margin-right -1rem !important
+  #markup-recent-button-group
+    display none !important
+.content-header
+  height 53px
+  .badge-pill
+    padding-left 0.51em
+    padding-right 0.51em
+.chatlist-search
+  &:focus,
+  .w-100 &
+    position relative
+    width 1%
+    height auto
+    clip none
+    transform none
+    opacity 1
+    & + label
+      display none!important
+.show-on-collapse
+  display none
+
+// Badge
+.badge-sm
+  font-size 0.625rem!important;
+  padding calc(0.225em - 1px) 0.45em
+
+
+/* ----------------------------- */
+/* Chat messages */
+/* ----------------------------- */
+
+.list-group-item-chat
+  justify-content center
+
+// Flex messages dropdown
+.chat-body.rich
+  .chat-sub
+    .dropdown
+      top -0.5rem
+      bottom auto
+
+// Unsend
+.chat-body
+  &.more
+    &:hover
+      .chat-sub
+        .dropdown
+          display block
+        & > span
+          visibility hidden
+    .chat-sub
+      position relative
+  .dropdown
+    display none
+    position absolute
+    left 0
+    right 0
+    &.show
+      display block
+      & ~ span
+        visibility hidden
+    .chat-reverse &
+      left auto
+      bottom 0
+    .dropdown-toggle
+      &::after
+        display none
+
+.chat-reverse .chat-body
+  .chat-item.multi
+    .position-relative:hover .dropdown
+      display: block
+    .dropdown
+      z-index: 1
+      .dropdown-toggle
+        padding 0.1rem
+        background-color rgba(#353a40, 0.6);
+        &:hover
+          background-color rgba(#353a40, 0.7);
+      &.show
+        .dropdown-toggle
+          background-color rgba(#353a40, 0.8);
+
+// Reply
+.chat-body
+  .chat-item.multi
+    .position-relative:hover .dropdown
+      display: block
+    .dropdown
+      left auto
+      bottom 0
+      z-index: 1
+      .dropdown-toggle
+        padding 0.1rem
+        background-color rgba(#353a40, 0.6);
+        &:hover
+          background-color rgba(#353a40, 0.7);
+      &.show
+        .dropdown-toggle
+          background-color rgba(#353a40, 0.8);
+
+
+// Chat item
+.chat-item.baloon
+  width -moz-fit-content
+  width -webkit-fit-content
+  width fit-content
+
+
+/* ----------------------------- */
+/* Settings */
+/* ----------------------------- */
+
+// Setting tabs
+.nav-tabs
+  .badge
+    vertical-align 2px
+
+// Highlight setting section
+.highlight
+  transition background-color 0.3s
+  &.active
+    background-color #e0f7e0
+
+// Volumn bar
+.volume
+  height 10px
+  &::after
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, #fff, #fff 40%, transparent 40%, transparent 100%);
+    background-size: 7px 2px;
+    border: none;
+.volume-bar
+  top 0
+  left 0
+  width 0
+
+// Table
+.table.table-align-middle
+  th
+  td
+    vertical-align: middle;
+
+// Textarea
+.form-control.editor
+  resize vertical
+  overflow-y auto
+  line-height 1.58
+  white-space pre-wrap
+
+// rich textarea
+rich-textarea.form-control
+  --rich-textarea-padding 0.375rem 0.75rem
+  height auto
+
+
+
+// Chat AI - Instruction style to sync with development sources
+#instructionInput
+  width 336px !important
+.dropright
+  #instructionInput
+    top auto !important
+    bottom 0 !important
+.dropup
+  #instructionInput
+    right 0 !important
+    left auto !important
+
+/* ----------------------------- */
+/* Device fix */
+/* ----------------------------- */
+
+// Prevent name placeholder from dragging (FF)
+.editor img
+  pointer-events none
+
+
+// PC
+@import '_partial/_call.styl'
+@import '_partial/_cmodal.styl'
+@import '_partial/_calert.styl'
+@import '_partial/_emoji-list.styl'
+@import '_partial/_timeline.styl'
+
+// Common
+@import '../_partial/_common-chat.styl'
+@import '../_partial/_common-chatlist.styl'
+@import '../_partial/_common-laicon.styl'
+@import '../_partial/_common-emoji.styl'
+@import '../_partial/_common-sticker.styl'
+@import '../_partial/_common-preview.styl'
+@import '../_partial/_common-reply.styl'
+@import '../_partial/_koromo-fix.styl'
+@import '../_partial/_koromo-vue-fix.styl'
+

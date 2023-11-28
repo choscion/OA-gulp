@@ -1,0 +1,283 @@
+// Font-weight
+.font-weight-bold
+  font-weight 700 !important
+
+// Auto tag
+a.tag.autotag
+  &:hover
+    border-color: #505769
+    color: #505769
+
+// Name placeholder
+.badge-placeholder
+  display inline;
+  margin 0 0.075em;
+  padding 0.22em 0.6em
+
+// Ellipsis with emoji fix
+.text-truncate-box
+  overflow hidden
+  display -webkit-box
+  -webkit-box-orient vertical
+  -webkit-line-clamp 1
+  white-space normal
+  word-break break-all
+
+// text underlined
+.text-underline
+  text-decoration underline
+
+// Skeleton
+.skeleton
+  text-indent: -9999px;
+  border-radius: 2px;
+  border-color: #edeff0;
+  background: #edeff0;
+  background-image: linear-gradient(to right, #edeff0 0%, #dfe3e4 10%, #edeff0 20%);
+  background-repeat: no-repeat;
+  background-size: 200vw 100vh;
+  -webkit-animation: shimmer 2s linear 2s infinite reverse forwards;
+  animation: shimmer 2s linear 2s infinite reverse forwards;
+.skeleton:after
+  content: '...';
+  color: #edeff0
+@-webkit-keyframes shimmer {
+  0% {background-position: -100% 0}
+  100% {background-position: 40% 0}
+}
+@keyframes shimmer {
+  0% {background-position: -100% 0}
+  100% {background-position: 40% 0}
+}
+
+// Avatar
+.avatar
+  position relative
+  &.avatar-xs
+    min-width 2.25rem
+  &-video
+    &::before
+      content: "\f144";
+      font-family: "Font Awesome\ 5 Pro";
+      color: #fff;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.5rem;
+      margin-left: -0.5rem;
+      z-index: 1;
+    &::after
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background-color rgba(0, 0, 0, .5)
+  &-noimg
+    background-size 100%
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='54'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%23D5E3FD' d='M0 0h54v54H0z'/%3E%3Cpath stroke='%23FFF' stroke-width='1.7' d='M17.712 36.576v-2.815c0-.818.413-1.58 1.098-2.027l5.297-3.453c.732-.514.66-1.623.263-2.25a33.46 33.46 0 01-1.26-2.167c-.14-.082-.681-.422-.847-1.553a1.43 1.43 0 01.267-1.078l-.002-.04c0-2.817 1.944-4.777 4.472-4.777 2.528 0 4.472 1.96 4.472 4.777l-.002.04c.127.168.345.544.267 1.078-.166 1.13-.708 1.471-.848 1.553a32.543 32.543 0 01-1.26 2.167c-.396.627-.468 1.736.264 2.25l5.297 3.453a2.419 2.419 0 011.098 2.027v2.815H17.712z'/%3E%3C/g%3E%3C/svg%3E")!important
+  &-noimg-group
+    background-size 100%
+    background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='54' height='54'%3E%3Cdefs%3E%3Cpath id='a' d='M0 31.733h31.733V0H0v31.733zm1.528-5.289v-2.737c0-1.74.857-3.369 2.292-4.356 1.149-.79 2.905-1.998 3.992-2.748a36.319 36.319 0 01-.66-1.15c-.575-.552-1.18-1.457-1.39-2.893a4.058 4.058 0 01.262-2.16c.3-3.899 3.249-6.76 7.091-6.76s6.79 2.863 7.091 6.76a4.09 4.09 0 01.265 2.164c-.212 1.432-.817 2.337-1.391 2.889-.39.703-.692 1.207-.955 1.63-.024.164-.034.39-.03.596l.41.227c4.707 2.608 6.195 3.527 6.195 5.497v5.686H1.528v-2.645z'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%23D5E3FD' d='M0 0h54v54H0z'/%3E%3Cpath stroke='%23FFF' stroke-width='1.7' d='M33.057 36.444V33.71a2.64 2.64 0 00-1.144-2.178c-1.605-1.105-4.39-3.02-4.904-3.382-.733-.515-.66-1.623-.263-2.25.338-.535.712-1.15 1.26-2.166.139-.082.68-.424.846-1.554.078-.533-.14-.91-.267-1.078 0-.014.003-.026.003-.04 0-2.817-1.945-4.776-4.473-4.776-2.528 0-4.472 1.96-4.472 4.777l.001.04a1.44 1.44 0 00-.267 1.077c.167 1.13.707 1.472.849 1.554.546 1.016.92 1.631 1.259 2.165.398.628.47 1.736-.262 2.25-.545.383-3.612 2.493-5.158 3.558a2.053 2.053 0 00-.891 1.697v3.041h17.883z'/%3E%3Cg transform='translate(11 10)'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cpath stroke='%23FFF' stroke-width='1.7' d='M28.383 26.444V23.71c0-.872-.427-1.685-1.145-2.178-1.605-1.105-4.388-3.02-4.904-3.382-.733-.515-.66-1.623-.262-2.25.337-.535.713-1.15 1.259-2.166.14-.082.68-.424.847-1.554.078-.533-.14-.91-.267-1.078l.002-.04c0-2.817-1.944-4.776-4.472-4.776-2.528 0-4.473 1.96-4.473 4.777l.002.04a1.445 1.445 0 00-.267 1.077c.166 1.13.708 1.472.848 1.554a32.13 32.13 0 001.26 2.165c.397.628.47 1.736-.263 2.25-.516.363-3.3 2.278-4.904 3.383A2.64 2.64 0 0010.5 23.71v2.735h17.883z' mask='url(%23b)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")!important
+
+// Fix iOS sticky hover
+.list-group-item-action:active,
+.list-group-item-action.active
+  background-color #edeff0
+
+// Utils
+.rotate-90
+  transform rotate(90deg)
+.rotate--90
+  transform rotate(-90deg)
+.rotate-180
+  transform rotate(180deg)
+.rotate-270
+  transform rotate(270deg)
+.object-fit-contain
+  object-fit contain !important
+.object-fit-cover
+  object-fit cover !important
+.text-break
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+.text-break-all
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+.text-pre
+  white-space pre
+[aria-disabled="true"]
+  pointer-events none
+.border-muted
+  border-color #edeff0
+
+
+// Animation
+.blink
+  opacity 1
+  animation-name blinkOpacity
+  animation-iteration-count infinite
+  animation-duration 2s
+@keyframes blinkOpacity
+  from
+    opacity 1
+  50%
+    opacity .5
+  to
+    opacity 1
+
+// Input Reset
+.form-control
+  textarea&::placeholder
+    font-family inherit
+  /.form-group-clear textarea&
+    max-height 100px
+
+// rich textarea
+rich-textarea.form-control
+  --rich-textarea-placeholder-color: #adb5bd
+
+// Modal button close
+.modal-header
+  button.close
+    position: relative;
+    display: inline-block;
+    speak: none;
+    color: transparent;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: laicon-solid !important;
+    font-size: 1.25em;
+    &:before
+      content: '\E0EE';
+      color: #000;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 1rem;
+
+// Modal - safe area
+.modal-dialog
+  margin-top calc(0.5rem + env(safe-area-inset-top));
+  margin-bottom calc(0.5rem + env(safe-area-inset-bottom));
+  &.modal-dialog-centered
+    min-height calc(100% - (0.5rem * 2 + env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+    &::before
+      height calc(100vh - (0.5rem * 2 + env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+  &.modal-full
+    padding-top calc(1rem + env(safe-area-inset-top));
+
+// Cmodal - safe area
+.cmodal
+  .cmodal-dialog
+    padding-top env(safe-area-inset-top);
+    padding-bottom env(safe-area-inset-bottom);
+
+// Toast - style about issue in toast location
+.toast-container
+  padding-top env(safe-area-inset-top)
+
+// Disabled safe area
+#page
+  &.safearea-disabled
+    .modal-dialog
+      margin-top 0.5rem
+      margin-bottom 0.5rem
+      &.modal-dialog-centered
+        min-height calc(100% - (0.5rem * 2))
+        &::before
+          height calc(100vh - (0.5rem * 2))
+      &.modal-full
+        padding-top 1rem
+    .cmodal
+      .cmodal-dialog
+        padding-top 0
+    // Style about issue in toast location
+    & ~ .toast-container
+      padding-top 0
+
+@media (min-width: 570px)
+  .modal-dialog
+    margin-top calc(1.75rem + env(safe-area-inset-top));
+    margin-bottom calc(1.75rem + env(safe-area-inset-bottom));
+    &.modal-dialog-centered
+      min-height calc(100% - (1.75rem * 2 + env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+      &::before
+        height calc(100vh - (1.75rem * 2 + env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+
+  #page
+    &.safearea-disabled
+      .modal-dialog
+        margin-top 1.75rem
+        margin-bottom 1.75rem
+        &.modal-dialog-centered
+          min-height calc(100% - (1.75rem * 2))
+          &::before
+            height calc(100vh - (1.75rem * 2))
+
+// Profile assignee
+.profile-edit-assignee
+  .list-group-item
+    padding 0
+  .custom-control
+    padding-left 0
+  ul.list-group
+    .custom-control-label
+      padding 0.75rem 1.25rem
+      padding-left 2.6rem
+      &:after, &:before
+        top 50% !important
+        left 1.25rem
+        transform translateY(-50%)
+
+
+// Chatsys date
+.chatsys.chatsys-date
+  position sticky
+  top calc(var(--chatsys-date-top, 0px)+ 8px)
+  z-index 2
+  transition opacity 0.2s
+
+
+// XLT linebreak
+.preline
+  white-space pre-line;
+
+// Custom select disabled
+.custom-select:disabled
+  border-color #cfd4da
+  background-color #f8f9fa
+  color #adb5bd
+  opacity 1
+
+// sticker size in chat-item
+.chat
+  .chat-item-sticker
+    max-width 185px
+    max-height 160px
+  
+
+.chat,
+.chat-reverse
+  .border
+    &-chat
+      border-color rgba(173,181,189,0.5) !important
+
+.text-black-30
+  color rgba(0, 0, 0, .3) !important
+  
+.w-max-fit 
+  max-width fit-content
+  
+// Rendering issue fix LINEBOT-41539
+.translate-3d
+  transform translate3d(0,0,0)

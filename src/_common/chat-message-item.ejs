@@ -1,0 +1,12 @@
+<div class="chat chat-text-dark <%= locals.messageColor ? locals.messageColor : '' %> <%= locals.isReverse ? 'chat-reverse' : '' %>">
+  <% if (!locals.isReverse) {%>
+    <div class="avatar avatar-xs position-sticky">
+      <img src="" alt="" class="rounded-circle">
+    </div>
+  <% } %>
+  <div class="chat-content">
+    <% if (locals.messageType === 'text') { %>
+      <p>hello222222</p>
+    <% } %>
+  </div>
+</div>

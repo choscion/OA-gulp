@@ -1,0 +1,142 @@
+light = #f8f9fa
+dark = #343a40
+border = #dee2e6
+active = #666f86
+
+#main-wrapper
+  height 100%
+#page
+  display: flex
+  flex-direction: column
+  height 100%
+  overflow-y hidden
+#header
+  flex: 0 0 60px;
+  min-width 1341px
+  height: 60px
+  display: flex
+  justify-content: space-between
+  align-items: stretch
+  background-color: #fff
+  color: #353a40
+  border-bottom: 1px solid #edeff0
+  .text-info
+    .badge
+      border: 1px solid #adb5bd
+      color: #adb5bd
+  padding 0 18px
+  > div
+    display: flex
+    align-items: stretch
+  #header-logo
+    padding-right: 1rem
+    img
+      height: 23px
+#header-menu
+  i
+    font-size: 1.5rem
+#header-upper
+  flex 1 0 auto
+#header-lower
+  min-width 0
+.header-menu-button
+  &:hover
+    opacity 0.5;
+.account-name
+  max-width 13.2rem
+.user-name
+  max-width 6.6rem
+#header-menu-help
+  .dropdown-menu
+    width 280px
+    padding 0
+  p
+    white-space pre-line
+#header-user
+  .dropdown-item
+    .badge-pill
+      padding-left: 0.51em
+      padding-right: 0.51em
+
+// sticker
+.sticker-nav
+  position relative
+  flex 0 0 40px
+  height 33px
+  display flex
+  align-items center
+  justify-content center
+  color active
+  &.disabled
+    opacity .25
+  >img
+    width 100%
+    filter grayscale(100%)
+  &:hover:not(.disabled)
+    background rgba(active, .1)
+    color active
+  &.active,
+  &.active:not(.disabled)
+    background rgba(active, .25)
+    >img
+      filter grayscale(0)
+  &:after
+    width 13px
+    height 13px
+    position absolute
+    right 3px
+    bottom 3px
+    background-size 13px 13px
+.sticker-list
+  display flex
+  flex-wrap wrap
+.sticker-console
+  display flex
+  align-items center
+  justify-content center
+  height 100%
+.sticker-item
+  flex 0 0 108px
+  height 100px
+  display flex
+  align-items center
+  justify-content center
+  >img
+    max-width 108px
+    max-height 100px
+    transform scale(.8)
+  &:hover
+    >img
+      transform scale(1)
+
+// tags
+.bootstrap-tagsinput .tag
+  text-align left
+
+// modal
+.bg-backdrop
+  background rgba(#000, .5)
+.modal-rg
+  width: 600px
+
+// Message editor
+.card
+  .editor
+    resize vertical
+    overflow-y auto
+    line-height 1.58
+    white-space pre-wrap
+  .wrapper
+    position relative
+  .wrapper textarea
+    display none
+  .wrapper .placeholder
+    pointer-events: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    padding-left: 2px;
+    color: #adb5bd;
+
+.btn.disabled, .btn:disabled
+  pointer-events none

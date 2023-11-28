@@ -1,0 +1,80 @@
+<% 
+  const title = 'CMS/CRM';
+  const layout = {
+    pc_pages: [
+      'headers',
+      'modals',
+      'chat',
+      'chat-ai',
+    ],
+    mobile_chatlist: [
+      'chatlist',
+    ]
+  };%>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS/CRM</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
+  <link rel="stylesheet" type="text/css" href="https://static.line-scdn.net/koromo/edge/2.1/koromo.css">
+  <link rel="stylesheet" type="text/css" href="https://static.line-scdn.net/font-awesome/edge/[ver]/pro/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://static.line-scdn.net/laicon/edge/16.3/laicon.min.css">
+</head>
+
+<body>
+  <div class="container py-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="display-4">CMS/CRM</h1>
+      <a href="https://wiki.linecorp.com/x/TSP5O">Wiki</a>
+    </div>
+    <h2 class="h3">Demo</h2>
+    <hr>
+    <div class="card-deck mb-5">
+      <div class="card">
+        <div class="card-header d-flex jusitfy-content-between align-item-center">
+          <span>
+            <i class="fas fa-laptop la-fw mr-1">PC</i>
+            <a href="https://uit.line-alpha.me/biz-cms-markup/html/pc/sample/">UIT</a>
+          </span>
+        </div>
+        <div class="card-body">
+          <ul class="mb-0">
+            <% for(let i=0; i < layout.pc_pages.length; i++) { %>
+              <li><a href="./pc/<%- layout.pc_pages[i] %>.html"><%- layout.pc_pages[i] %></a></li>
+              <% } %>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header d-flex jusitfy-content-between align-item-center">
+          <span>
+            <i class="fas fa-laptop la-fw mr-1">App (Multi-Devices)</i>
+          </span>
+        </div>
+        <div class="card-body">
+          <div class="mb-2">Chatlist</div>
+          <ul class="mb-0">
+            <% for(let i=0; i < layout.mobile_chatlist.length; i++) { %>
+              <li><a href="./pc/<%- layout.mobile_chatlist[i] %>.html"><%- layout.mobile_chatlist[i] %></a></li>
+              <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="d-none d-md-block">
+      <h2 class="h3 mb-0">Base CSS</h2>
+      <hr>
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item"><a href="#full" class="nav-link active" data-toggle="tab">Full</a></li>
+        <li class="nav-item"><a href="#min" class="nav-link" data-toggle="tab">Min</a></li>
+      </ul>
+      <div class="tab-content mb-5"></div>
+    </section>
+  </div>
+</body>
+</html>

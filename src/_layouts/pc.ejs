@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <% if (!locals.norwd) { %>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <% } %>
+    <title><%- locals.title; %></title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
+    <link rel="stylesheet" type="text/css" href="https://static.line-scdn.net/koromo/edge/2.1/koromo.css">
+    <link rel="stylesheet" type="text/css" href="https://static.line-scdn.net/font-awesome/edge/[ver]/pro/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://static.line-scdn.net/laicon/edge/16.3/laicon.min.css">
+  </head>
+  <body>
+    <%- locals.wrapper; %>
+  </body>
+</html>
