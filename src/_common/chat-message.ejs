@@ -1,0 +1,21 @@
+<div class="chatsys">
+  <div class="loader loader-sm loader-secondary"></div>
+</div>
+<div class="postion-relative">
+  <div class="chatsys chatsys-date">
+    <div class="chatsys-content">
+      2022.12.12
+    </div>
+  </div>
+  <div class="chatsys">
+    <div class="chatsys-content">
+      User's reservation has been completed
+    </div>
+  </div>
+
+  <%- include('./chat-message-item.ejs', {
+    isReverse: false,
+    messageColor: false,
+    messageType: 'text',
+  }) %>
+</div>

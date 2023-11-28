@@ -1,0 +1,74 @@
+// Setting : Response hours 
+.timeline
+  .timeline-header
+    display flex
+    margin-left 8rem
+    height 2rem
+    position relative
+    > span
+      position absolute
+      width 4rem
+      margin-left -2rem
+      text-align center
+      font-size 80%
+      color #adb5bd
+      bottom .5rem
+      left 0
+      &:nth-child(2)
+        left 25%
+      &:nth-child(3)
+        left 50%
+      &:nth-child(4)
+        left 75%
+      &:nth-child(5)
+        left 100%
+  .timeline-body
+    .timeline-line
+      + .timeline-line
+        margin-top -1px
+      display flex
+      align-items center
+      .timeline-label
+        flex 0 0 8rem
+        padding-right 1rem
+        text-align right
+      .timeline-list
+        border 1px solid gray
+        height 2.5rem
+        flex 1 1 auto
+        position relative
+        overflow hidden
+        .timeline-grid
+          width 1px
+          height 100%
+          background rgba(gray, .5)
+          position absolute
+          top 0
+          left 50%
+        &:before
+        &:after
+          content: ''
+          width 1px
+          height 100%
+          background rgba(gray, .5)
+          position absolute
+          top 0
+        &:before
+          left 25%
+        &:after
+          left 75%
+        .timeline-list-item
+          position absolute
+          top 50%
+          margin-top -.75rem
+          height 1.5rem
+          line-height 1.5rem
+          z-index 1
+          color #fff
+          font-size 80%
+          // padding-left .4rem
+          // padding-right .4rem
+          overflow hidden
+          text-overflow ellipsis
+          &.disabled
+            opacity .25

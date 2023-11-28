@@ -1,0 +1,113 @@
+
+// Chat overlay modal
+.cmodal
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 1035
+  color #fff
+  display none
+  &.open
+    display block
+  a
+  a:hover
+  .close
+    color #fff
+  .cmodal-dialog
+    width 100vw
+    height 100vh
+    background rgba(0,0,0,.8)
+  .cmodal-content
+    width 100%
+    height 100%
+    display flex
+    flex-direction column
+  .cmodal-header
+  .cmodal-footer
+    flex 0 0 auto
+    padding 1rem
+  .cmodal-header
+    display flex
+    align-items center
+    justify-content space-between
+  .cmodal-body
+    flex 1 1 auto
+    overflow-y scroll
+    padding: 0 15px
+
+  .cmodal-figure
+    max-width: 100%
+    height: auto
+    min-height: 2rem
+    max-height: calc(100vh - 7.5rem)
+
+  // Confirm modal : files
+  @import '../../_partial/_common-filelist.styl'
+  include-common-filelist(mobile)
+
+  // Confirm modal : Message
+  .chat-content
+    flex 1 1 auto
+    min-width 0
+    .chat-main
+      width 100%
+
+  // Confirm modal : Message with image
+  .chat-item-image
+    position relative
+    overflow hidden
+    background-size cover
+    background-position 50%
+    &::before
+      content ''
+      display block
+      padding-top 64.935%
+    // TODO: Remove after dev
+    img
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      width 100%
+      height 100%
+      object-fit cover
+
+  .chat-item-template-text
+    word-wrap break-word
+    word-break break-all;
+    overflow-wrap anywhere;
+
+  .cmodal-footer
+    display flex
+    align-items center
+    > div
+      flex 1 1 auto
+  .cmodal-text
+    padding 0 1rem
+    word-break break-all
+    overflow-wrap anywhere
+
+  // flex message
+  .kv-flex-bubble,
+  .chat-item-template
+    pointer-events: none
+  .carousel-inner
+    left -0.25rem
+    box-sizing content-box
+    padding-left 1rem
+  .kv-flex-carousel
+    padding 0 1rem
+    margin-left -1rem
+  .kv-flex-carousel.app,
+  .kv-flex-bubble.app
+    font-size 14px
+
+  // swiper slider
+  .swiper-container
+    margin-left -15px !important
+    margin-right -15px !important
+  .swiper-slide
+    padding 0 15px

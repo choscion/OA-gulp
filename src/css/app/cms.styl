@@ -1,0 +1,208 @@
+white = #fff
+text = #353a40
+light = #f8f9fa
+dark = #343a40
+border = #dee2e6
+active = #666f86
+
+a
+  color: text
+  &:hover
+    color: darken(text, 10%)
+.line-height-1
+  line-height: 1
+#main-wrapper
+  height 100%
+#page
+  display: flex
+  flex-direction: column
+  height: 100vh
+  width: 100vw
+  padding env(safe-area-inset-top) 0 0
+  &.safearea-disabled
+    padding 0
+
+#header
+  flex: 0 0 56px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background: white
+  padding: 0 15px
+  border-bottom: 1px solid border
+  z-index 3
+  .header-nav,
+  .header-title
+    display: flex
+    > *:first-child
+      position: relative
+      padding: .5rem 0
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      width: 100%
+  .header-nav
+    width: 12%
+    &:last-of-type > *
+      text-align: right
+    .badge
+      position: absolute
+      top: -2px
+      right: -1px
+  .header-title
+    width: 72%
+    font-size: 1.17188rem
+    font-weight: 600
+    > *:first-child
+      text-align: center
+  &.header-eq
+    .header-nav,
+    .header-title
+      width: 32%
+  &.header-multi
+    .header-nav
+      width: 24%
+      > *
+        padding: .5rem 0
+        width: auto
+      &:last-of-type
+        justify-content: flex-end
+    .header-title
+      width: 48%
+#search-bar
+  width: 100%;
+  z-index: 5;
+  &.active
+    position: absolute;
+#content
+  position relative
+  flex: 1 1 auto
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+#footer
+  &.btns
+    display: flex
+    .btn
+      flex: 1 0 auto
+    
+// sticker
+.sticker-nav
+  position relative
+  flex 0 0 50px
+  height 45px
+  padding 0 5px
+  display flex
+  align-items center
+  justify-content center
+  color active
+  &.disabled
+    opacity .25
+  >img
+    width 100%
+    filter grayscale(100%)
+  &.active,
+  &.active:not(.disabled)
+    background rgba(active, .25)
+    >img
+      filter grayscale(0)
+  &:after
+    width 13px
+    height 13px
+    position absolute
+    right 8px
+    bottom 8px
+    background-size 13px 13px
+.sticker-nav-delete
+  background-color inherit
+  -webkit-tap-highlight-color rgba(active, .25)
+  position relative
+  flex 0 0 50px
+  height 45px
+  padding 0 5px
+  display flex
+  align-items center
+  justify-content center
+  color active!important
+.sticker-list
+  display flex
+  flex-wrap wrap
+.sticker-console
+  display flex
+  align-items center
+  justify-content center
+  height 100%
+.sticker-item
+  flex 0 1 108px
+  height 100px
+  display flex
+  align-items center
+  justify-content center
+  >img
+    max-width 108px
+    max-height 100px
+    transform scale(.8)
+    transition: transform .1s ease-in-out
+  &.selected
+    opacity 1 !important
+    >img
+      transform scale(1)
+
+// Chat
+.chat-header
+  font-size 80%
+.chat .chat-content .chat-body .chat-main .chat-item
+  .chat-item-link
+  *+.chat-item-link
+  .chat-item-data
+  .chat-item-loc
+  .chat-item-location .chat-item-location-main
+  .chat-item-location .chat-item-location-sub
+  .chat-item-coupon .chat-item-coupon-main
+  .chat-item-coupon .chat-item-coupon-sub
+  .chat-item-template .chat-item-template-main
+  .chat-item-template .chat-item-template-sub
+    width auto
+    min-width 0
+    max-width 320px
+  .chat-item-template .chat-item-template-main .chat-item-template-btn
+    padding .375rem
+
+// modal
+.bg-backdrop
+  background rgba(#000, .5)
+
+// form controls
+::-webkit-input-placeholder
+  font-family inherit
+::-moz-placeholder
+  font-family inherit
+  
+.form-control-time
+  min-width 100px
+  .text-size-xl & 
+    min-width 165px
+
+  
+// TODO: Check usage
+.avatar
+.avatars
+  &.rounded-circle
+    z-index 1
+.toast
+  max-width calc(100vw - 0.75rem)
+
+// .list-tag
+//   .avatar.avatar-sm.avatar-initials span
+//     font-size 1.25rem
+// .app-item
+//   position relative
+//   display inline-block
+//   .badge-pin
+//     position absolute
+//     right -2px
+//     top -2px
+
+
+/* --------- */
+
+
