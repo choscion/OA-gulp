@@ -24,7 +24,7 @@ const paths = {
   styl_app_exclude: "src/css/app/_partial/",
 };
 
-// index.html build
+// index build
 function compileIndex(cb) {
   return src(path.join(paths.src, "**/*.html"))
     .pipe(ejs())
@@ -34,7 +34,10 @@ function compileIndex(cb) {
 }
 // pages build
 function compileContent(cb) {
-  return src([path.join(paths.html_pc, "**/*.ejs"), `!${path.join(paths.html_pc_exclude, '**/*.ejs')}`])
+  return src([
+      path.join(paths.html_pc, "**/*.ejs"),
+      `!${path.join(paths.html_pc_exclude, '**/*.ejs')}`
+    ])
     .pipe(ejs())
     .pipe(rename({ extname: '.html' }))
     .pipe(dest(paths.html_pc_dist))
@@ -44,14 +47,14 @@ function compileContent(cb) {
 // stylus
 async function taskStylus(cb) {
   return src([
-    path.join(paths.styl_src, "**/*.styl"),
-    `!${path.join(paths.styl_exclude, '**/*.styl')}`,
-    `!${path.join(paths.styl_pc_exclude, '**/*.styl')}`,
-    `!${path.join(paths.styl_app_exclude, '**/*.styl')}`
-  ])
-  .pipe(stylus({ compress: true }))
-  .pipe(rename({ extname: '.css' }))
-  .pipe(dest(paths.styl_dist))
+      path.join(paths.styl_src, "**/*.styl"),
+      `!${path.join(paths.styl_exclude, '**/*.styl')}`,
+      `!${path.join(paths.styl_pc_exclude, '**/*.styl')}`,
+      `!${path.join(paths.styl_app_exclude, '**/*.styl')}`
+    ])
+    .pipe(stylus({ compress: true }))
+    .pipe(rename({ extname: '.css' }))
+    .pipe(dest(paths.styl_dist))
 }
 
 // clean dist
@@ -72,15 +75,10 @@ function startDevServer(cb) {
   cb();
 }
 
+// watch
 function watchFiles(cb) {
-  watch(path.join(paths.src, "**/*.html")).on("change", function () {
-    compileIndex(cb);
-    reload();
-  });
-  watch(path.join(paths.src, "**/*.ejs")).on("change", function () {
-    compileContent(cb);
-    reload();
-  });
+  watch(path.join(paths.src, "**/*.html")).on("change", compileIndex);
+  watch(path.join(paths.src, "**/*.ejs")).on("change", compileContent);
   watch(path.join(paths.styl_src, '**/*.styl'), taskStylus);
   cb();
 }
