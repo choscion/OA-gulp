@@ -6,10 +6,6 @@ const ejs = require('gulp-ejs');
 const rename = require('gulp-rename');
 
 const stylus = require('gulp-stylus');
-// const sourcemaps = require('gulp-sourcemaps');
-// const autoprefixer = require('autoprefixer');
-// const cssCharset = require('gulp-append-prepend');
-// const postcss = require('gulp-postcss');
 
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
@@ -27,17 +23,6 @@ const paths = {
   styl_pc_exclude: "src/css/pc/_partial/",
   styl_app_exclude: "src/css/app/_partial/",
 };
-// autoprefixer 옵션
-const autoprefixerBrowsers = [
-  "ie >= 10",
-  "ie_mob >= 10",
-  "ff >= 30",
-  "chrome >= 34",
-  "safari >= 7",
-  "opera >= 23",
-  "ios >= 7",
-  "android >= 4.3",
-];
 
 // index.html build
 function compileIndex(cb) {
@@ -117,36 +102,3 @@ exports.deploy = series(
   compileContent,
   taskStylus
 );
-
-// gulp.task('ejs-index', () => {
-//   return gulp.src('src/index.html')
-//     .pipe(ejs())
-//     .pipe(rename({ extname: '.html' }))
-//     .pipe(gulp.dest('dist'))
-//     .pipe(browserSync.stream());
-// });
-
-// gulp.task('ejs-page', () => {
-//   return gulp.src('src/pc/*.ejs')
-//     .pipe(ejs())
-//     .pipe(rename({ extname: '.html' }))
-//     .pipe(gulp.dest('dist/pc'))
-//     .pipe(browserSync.stream());
-// });
-
-// // 브라우저 싱크 초기화
-// gulp.task('browser-sync', () => {
-//   browserSync.init({
-//     server: {
-//       baseDir: 'dist'
-//     }
-//   });
-// });
-
-// // 파일 감시 및 변경 감지
-// gulp.task('watch', () => {
-//   gulp.watch('src/**/*.ejs', gulp.series('ejs'));
-// });
-
-// 기본 태스크 정의
-// gulp.task('default', gulp.series('ejs-index', 'ejs-page', 'browser-sync', 'watch'));
